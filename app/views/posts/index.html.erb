@@ -1,9 +1,10 @@
 <% @posts.each do |post| %>
+<p>===========================</p>
 <!--postはpost.showへ行く-->
 <%= link_to (image_tag post.image.url(:small)),post %>
-
-
-<p><%= post.id %>:<%= link_to post.title,post %></p>
+<p><%= link_to post.title,post %></p>
+<p>コメント数：<%= post.comments.count %></p>
 <% end %>
+
 
 <%= link_to "新規投稿",new_post_path %>

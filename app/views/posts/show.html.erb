@@ -10,6 +10,18 @@
 <h1>user_No.<%= @post.user.id %>
 
 
+<h1>
+    <p>コメント数：<%= @post.comments.count %></p>
+    <p>
+        <% @comments.each do |comment| %><br/>
+        投稿者：<%= comment.user.name %><br/>
+        コメント：<%= comment.content %>
+        <% end %>
+    </p>
+    <p>新規コメント:<%= render "comments/form" %></p>
+</h1>
+
+
 
 <%= link_to "編集",edit_post_path(@post) %>
 <%= link_to "削除",post_path(@post),method: :delete,data: {confirm:"削除してもいいですか"} %>

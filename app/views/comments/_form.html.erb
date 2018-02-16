@@ -1,0 +1,5 @@
+<%= form_for([@post,@post.comments.build]) do |f| %>
+   <p>コメント欄:<%= f.text_field :content %></p>
+   <p><%= f.button :submit %></p>
+<% end %>
+
