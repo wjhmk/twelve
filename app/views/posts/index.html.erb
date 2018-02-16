@@ -1,0 +1,6 @@
+<% @posts.each do |post| %>
+<!--postはpost.showへ行く-->
+<p><%= post.id %>:<%= link_to post.title,post %></p>
+<% end %>
+
+<%= link_to "新規投稿",new_post_path %>
