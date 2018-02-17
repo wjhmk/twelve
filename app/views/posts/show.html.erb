@@ -7,8 +7,12 @@
 <h1>id:<%= @post.id %></h1>
 <p>=========================</p>
 <h1>name of editer:<%= @post.user.name %></h1>
-<h1>user_No.<%= @post.user.id %>
+<h1>user_No.<%= @post.user.id %></h1>
 
+
+
+<p><%= link_to "いいね！", like_post_path(@post), method: :get  %>：<%= @post.get_upvotes.size %></p>
+<p><%= link_to "ダメだね!", dislike_post_path(@post),method: :get %>:<%= @post.get_downvotes.size %></p>
 
 <h1>
     <p>コメント数：<%= @post.comments.count %></p>
